@@ -8,7 +8,7 @@ public class SiteCrewManagerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SiteCrewManagerApplication.class, args);
-		//gg
+		 
 	}
 
 }
