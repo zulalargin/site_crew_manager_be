@@ -36,7 +36,7 @@ public class PersonnelService {
         Personnel personnel = personnelRepository.findById(personnelId)
                 .orElseThrow(() -> new RuntimeException("Personnel not found"));
 
-        // null olabilir!
+       
         personnel.setSiteId(siteId);
 
         return personnelRepository.save(personnel);

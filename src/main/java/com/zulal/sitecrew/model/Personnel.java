@@ -17,6 +17,15 @@ public class Personnel {
     @Column(name = "site_id")
     private Integer siteId;
 
+    private String position;
+
+    private String nationality;
+
+    @Column(name = "visa_status")
+    private String visaStatus;
+
+    private Float salary;
+
     // Getters & Setters
     public Integer getId() {
         return id;
@@ -48,5 +57,37 @@ public class Personnel {
 
     public void setSiteId(Integer siteId) {
         this.siteId = siteId;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
+    public String getVisaStatus() {
+        return visaStatus;
+    }
+
+    public void setVisaStatus(String visaStatus) {
+        this.visaStatus = visaStatus;
+    }
+
+    public Float getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Float salary) {
+        this.salary = salary;
     }
 }
