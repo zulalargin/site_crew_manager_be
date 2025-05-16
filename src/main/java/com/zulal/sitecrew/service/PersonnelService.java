@@ -32,10 +32,15 @@ public class PersonnelService {
         return personnelRepository.save(p);
     }
 
-    public Personnel updateSite(Integer id, Integer newSiteId) {
-        Personnel p = personnelRepository.findById(id)
-            .orElseThrow(() -> new RuntimeException("Personnel not found"));
-        p.setSiteId(newSiteId);
-        return personnelRepository.save(p);
+    public Personnel updateSite(Integer personnelId, Integer siteId) {
+        Personnel personnel = personnelRepository.findById(personnelId)
+                .orElseThrow(() -> new RuntimeException("Personnel not found"));
+
+        // null olabilir!
+        personnel.setSiteId(siteId);
+
+        return personnelRepository.save(personnel);
     }
+
+
 }
