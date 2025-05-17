@@ -40,9 +40,15 @@ public class PersonnelController {
     }
 
     
-
     @PostMapping
     public Personnel create(@RequestBody Personnel p) {
         return personnelService.save(p);
     }
+    
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Integer id) {
+        personnelService.delete(id);
+    }
+
+    
 }

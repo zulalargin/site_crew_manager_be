@@ -33,6 +33,7 @@ public class PersonnelService {
         return personnelRepository.save(p);
     }
 
+
     public Personnel updateSite(Integer personnelId, Integer siteId) {
         Personnel personnel = personnelRepository.findById(personnelId)
                 .orElseThrow(() -> new RuntimeException("Personnel not found"));
@@ -64,6 +65,10 @@ public class PersonnelService {
         p.setSalary(req.getSalary());
 
         return personnelRepository.save(p);
+    }
+
+    public void delete(Integer id) {
+        personnelRepository.deleteById(id);
     }
 
 

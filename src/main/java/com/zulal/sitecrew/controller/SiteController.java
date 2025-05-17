@@ -43,4 +43,5 @@ public class SiteController {
     public void deleteSite(@PathVariable Integer id) {
         siteService.deleteSite(id);
     }
+    
 }
