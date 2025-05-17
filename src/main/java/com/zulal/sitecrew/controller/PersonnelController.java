@@ -30,9 +30,11 @@ public class PersonnelController {
 
     @PutMapping("/{id}/assign")
     public Personnel assignSite(@PathVariable Integer id, @RequestBody PersonnelAssignmentRequest request) {
-        return personnelService.updateSite(id, request.getSiteId());
+        return personnelService.updateSiteAndStatus(id, request.getSiteId(), request.getStatus());
     }
 
+
+    
 
     @PostMapping
     public Personnel create(@RequestBody Personnel p) {

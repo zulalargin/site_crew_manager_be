@@ -41,6 +41,17 @@ public class PersonnelService {
 
         return personnelRepository.save(personnel);
     }
+    
+    public Personnel updateSiteAndStatus(Integer id, Integer siteId, String status) {
+        Personnel p = personnelRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Personnel not found with id " + id));
+
+        p.setSiteId(siteId);
+        p.setStatus(status);
+        return personnelRepository.save(p);
+    }
+
+
 
 
 }
