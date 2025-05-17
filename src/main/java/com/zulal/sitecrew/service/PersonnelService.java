@@ -1,5 +1,6 @@
 package com.zulal.sitecrew.service;
 
+import com.zulal.sitecrew.dto.PersonnelUpdateRequest;
 import com.zulal.sitecrew.model.Personnel;
 import com.zulal.sitecrew.repository.PersonnelRepository;
 import org.springframework.stereotype.Service;
@@ -48,6 +49,20 @@ public class PersonnelService {
 
         p.setSiteId(siteId);
         p.setStatus(status);
+        return personnelRepository.save(p);
+    }
+
+    public Personnel updatePersonnel(Integer id, PersonnelUpdateRequest req) {
+        Personnel p = personnelRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Personel bulunamadı"));
+
+        p.setName(req.getName());
+        p.setRole(req.getRole());
+        p.setPosition(req.getPosition());
+        p.setNationality(req.getNationality());
+        p.setVisaStatus(req.getVisaStatus());
+        p.setSalary(req.getSalary());
+
         return personnelRepository.save(p);
     }
 

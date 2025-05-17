@@ -1,6 +1,7 @@
 package com.zulal.sitecrew.controller;
 
 import com.zulal.sitecrew.dto.PersonnelAssignmentRequest;
+import com.zulal.sitecrew.dto.PersonnelUpdateRequest;
 import com.zulal.sitecrew.model.Personnel;
 import com.zulal.sitecrew.service.PersonnelService;
 import org.springframework.web.bind.annotation.*;
@@ -33,6 +34,10 @@ public class PersonnelController {
         return personnelService.updateSiteAndStatus(id, request.getSiteId(), request.getStatus());
     }
 
+    @PutMapping("/{id}")
+    public Personnel update(@PathVariable Integer id, @RequestBody PersonnelUpdateRequest request) {
+        return personnelService.updatePersonnel(id, request);
+    }
 
     
 

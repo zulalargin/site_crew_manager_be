@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface PersonnelRepository extends JpaRepository<Personnel, Integer> {
     List<Personnel> findBySiteId(Integer siteId);
+    
 }
